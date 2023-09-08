@@ -2,6 +2,8 @@
 -complier the ts file to js file: tsc app.ts
 - install node modules: npm install
 - install live-server in node modules: npm install lite-server --save-dev
+
+    Section 3: The TypeScript Complier(and its Configuaration)
 - using watch mode to auto complie specific file: tsc app.js --watch or tsc app.js -w
 - compiling the entire project, multi file: 
         1. using command: tsc --init //to create the tsconfig.json
@@ -9,3 +11,8 @@
         3. using command: tsc -w or --watch // to using auto watching mode
 - including and excluding files: 
         1. adding "exclude" to ignore file to compile and "include" to observer files .ts
+-Setting a compilation target
+        1. Modified the the "target" field in the tsconfig.js file to change the target compile"es6. es5 ....
+-Understading TypeScript Core Libs
+        1. Modified the the "lib" field in the tsconfig.js file to add the libraries for the typescript. If
+        you are using the default command. it's mean that the all the file of es6 was install in global.
