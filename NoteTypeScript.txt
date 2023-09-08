@@ -1,0 +1,5 @@
+-install typescript: run npm install -g typescript
+-complier the ts file to js file: tsc app.ts
+- install node modules: npm install
+- install live-server in node modules: npm install lite-server --save-dev
+- 
