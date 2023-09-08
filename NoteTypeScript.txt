@@ -21,4 +21,5 @@
 -Configuaration the rootDir and outDir in the tsconfig.json
         1. "rootDir": "./src", "outDir": "./dict", Using to  force generate the file in ./src and auto generate the out file into the ./dict folder
         2.  "removeComments": true, Doesn't generate the comment in .ts file to the js
-        
+-Stop emmiting files on compliation Errors
+        1. Uncomment the  "noEmitOnError": true, Using to stop emiting the .js file from the .ts file if we get the errors compile.
