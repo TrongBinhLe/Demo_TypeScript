@@ -70,7 +70,7 @@ promise4.catch(function (reason) {
 
 // Understanding async-await
 async function showAvatar() {
-  // read our JSON
+  // read our JSON ffd
   let response = await fetch("/article/promise-chaining/user.json");
   let user = await response.json();
 

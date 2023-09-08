@@ -8,9 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-/* Unknow type vs Any type */
-//same: Co the assign bat ky type nao
-//diff: Any: co the thu hien bat ky operation nao ma khong can check type but unknow thi can phai check 
 let unKnowType;
 unKnowType = Math.random;
 unKnowType = 1;
@@ -23,8 +20,7 @@ let sTringValue = "Le Trong Binh";
 if (typeof unKnowType == "string") {
     unKnowType = sTringValue;
 }
-function combine(input1, input2, resultConversion // Literal Type
-) {
+function combine(input1, input2, resultConversion) {
     let result;
     if ((typeof input1 === "number" && typeof input2 === "number") ||
         resultConversion === "as-number") {
@@ -52,28 +48,22 @@ const promise4 = new Promise((resolve, reject) => {
         reject("Rejected state");
     }
 });
-// Understading promise
 promise4.then(function (value) {
     console.log("This will run as it is a resolved promise, The resolved value is", value);
 });
 promise4.catch(function (reason) {
     console.log("This will not run as it is a resolved promise", reason);
 });
-// Understanding async-await
 function showAvatar() {
     return __awaiter(this, void 0, void 0, function* () {
-        // read our JSON
         let response = yield fetch("/article/promise-chaining/user.json");
         let user = yield response.json();
-        // read github user
         let githubResponse = yield fetch(`https://api.github.com/users/${user.name}`);
         let githubUser = yield githubResponse.json();
-        // show the avatar
         let img = document.createElement("img");
         img.src = githubUser.avatar_url;
         img.className = "promise-avatar-example";
         document.body.append(img);
-        // wait 3 seconds
         yield new Promise((resolve, reject) => setTimeout(resolve, 3000));
         img.remove();
         return githubUser;

@@ -18,3 +18,7 @@
         you are using the default command. it's mean that the all the file of es6 was install in global.
 -Working with sourceMAp: 
         1. Uncomment the sourceMap to generate the file ts in source of the development tool. We will use it to debug the code in .js file.
+-Configuaration the rootDir and outDir in the tsconfig.json
+        1. "rootDir": "./src", "outDir": "./dict", Using to  force generate the file in ./src and auto generate the out file into the ./dict folder
+        2.  "removeComments": true, Doesn't generate the comment in .ts file to the js
+        
