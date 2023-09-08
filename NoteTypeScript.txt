@@ -3,3 +3,7 @@
 - install node modules: npm install
 - install live-server in node modules: npm install lite-server --save-dev
 - using watch mode to auto complie specific file: tsc app.js --watch or tsc app.js -w
+- compiling the entire project, multi file: 
+        1. using command: tsc --init //to create the tsconfig.json
+        2. using command: tsc // to compile all file .ts in project
+        3. using command: tsc -w or --watch // to using auto watching mode
