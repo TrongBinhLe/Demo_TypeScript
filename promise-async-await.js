@@ -82,3 +82,4 @@ function showAvatar() {
 showAvatar().catch(error => {
     console.log(error);
 });
+//# sourceMappingURL=promise-async-await.js.map

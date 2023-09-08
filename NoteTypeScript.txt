@@ -16,3 +16,5 @@
 -Understading TypeScript Core Libs
         1. Modified the the "lib" field in the tsconfig.js file to add the libraries for the typescript. If
         you are using the default command. it's mean that the all the file of es6 was install in global.
+-Working with sourceMAp: 
+        1. Uncomment the sourceMap to generate the file ts in source of the development tool. We will use it to debug the code in .js file.
