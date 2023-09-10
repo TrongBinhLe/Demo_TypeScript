@@ -1,6 +1,7 @@
 class Department {
   // private readonly id: string;
   // private name: string;
+  static modelYear: number = 2023;
   protected employees: string[] = [];
 
   constructor(private readonly id: string, public name: string) {
@@ -10,6 +11,10 @@ class Department {
 
   describe(this: Department) {
     console.log(`Department (${this.id}): ${this.name}`);
+  }
+
+  static createEmployee(name: string) {
+    return { name: name };
   }
 
   addEmployee(employee: string) {
@@ -83,6 +88,8 @@ it.name = "NEW NAME";
 it.printEmployeeInformation();
 
 console.log(it);
+
+console.log(Department.createEmployee("Bcons Suoi Tien"));
 
 const accounting = new AccountingDepartment("d2", ["TrongBInh"]);
 
