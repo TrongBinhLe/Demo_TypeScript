@@ -18,12 +18,12 @@ const e1: ElevatedEmployee = {
   startDate: new Date(),
 };
 
-type Combinable = string | number;
+type Combinable1 = string | number;
 type Numeric = number | boolean;
 
-type Universal = Combinable & Numeric;
+type Universal = Combinable1 & Numeric;
 
-function add(a: Combinable, b: Combinable) {
+function add5(a: Combinable1, b: Combinable1) {
   if (typeof a === "string" || typeof b === "string") {
     return a.toString() + b.toString();
   }
