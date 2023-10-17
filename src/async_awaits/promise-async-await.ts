@@ -77,6 +77,7 @@ async function showAvatar() {
   // read github user
   let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
   let githubUser = await githubResponse.json();
+  console.log("[remote]: run after await success")
 
   // show the avatar
   let img = document.createElement("img");
@@ -95,3 +96,4 @@ async function showAvatar() {
 showAvatar().catch(error => {
   console.log(error)
 });
+console.log("[remote]: run after showAvatar");

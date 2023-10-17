@@ -60,6 +60,7 @@ function showAvatar() {
         let user = yield response.json();
         let githubResponse = yield fetch(`https://api.github.com/users/${user.name}`);
         let githubUser = yield githubResponse.json();
+        console.log("[remote]: run after await success");
         let img = document.createElement("img");
         img.src = githubUser.avatar_url;
         img.className = "promise-avatar-example";
@@ -72,4 +73,5 @@ function showAvatar() {
 showAvatar().catch(error => {
     console.log(error);
 });
+console.log("[remote]: run after showAvatar");
 //# sourceMappingURL=promise-async-await.js.map
