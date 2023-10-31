@@ -30,7 +30,7 @@ const addedNumbers1 = add1(3, 4, 5);
 console.log(addedNumbers);
 console.log(addedNumbers1);
 const [hobbie1, hobbie2, ...remainHobbies] = hobbies;
-console.log(hobbie1, hobbie2, remainHobbies);
+console.log('Log configuration', hobbie1, hobbie2, remainHobbies);
 const { firstName: changeName, age } = people;
-console.log(changeName, age, people);
+console.log('Log configuration', changeName, age, people);
 //# sourceMappingURL=configuation-and-next-generation.js.map

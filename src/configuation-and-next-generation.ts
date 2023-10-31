@@ -41,7 +41,7 @@ console.log(addedNumbers1);
 
 // Array and Object Destructuring
 const [hobbie1, hobbie2, ...remainHobbies] = hobbies;
-console.log(hobbie1, hobbie2, remainHobbies);
+console.log('Log configuration', hobbie1, hobbie2, remainHobbies);
 
 const { firstName: changeName, age } = people;
-console.log(changeName, age, people);
+console.log('Log configuration', changeName, age, people);
