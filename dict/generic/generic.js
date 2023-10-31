@@ -15,4 +15,8 @@ function countAndDescribe(element) {
     return [element, descriptionText];
 }
 console.log(`[generic]: ${countAndDescribe('Hi there')}`);
+function extractAndConvert(obj, key) {
+    return 'Value: ' + obj[key];
+}
+extractAndConvert({ name: 'MAZ' }, 'name');
 //# sourceMappingURL=generic.js.map

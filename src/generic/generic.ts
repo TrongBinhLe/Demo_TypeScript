@@ -22,3 +22,10 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
 
 console.log(`[generic]: ${countAndDescribe('Hi there')}`);
 
+
+//Using keyof to define T is key value of T Objet
+function extractAndConvert<T extends Object, U extends keyof T>(obj: T, key: U) {
+    return 'Value: ' + obj[key]
+}
+
+extractAndConvert({name: 'MAZ'}, 'name');
