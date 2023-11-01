@@ -32,7 +32,7 @@ extractAndConvert({name: 'MAZ'}, 'name');
 
 // Generic Class 
 
-class DataStorage <T>{
+class DataStorage <T extends string | boolean | object| number>{
     private readonly data: T[] = [];
 
     addItem(item: T) { 
@@ -40,6 +40,9 @@ class DataStorage <T>{
     }
 
     removeItem(item: T) {
+        if (this.data.indexOf(item) === -1){
+            return
+        }
         this.data.splice(this.data.indexOf(item), 1)
     }
 
@@ -58,8 +61,28 @@ console.log('Generic class:', textStorage.getItems())
 
 const numberStorage = new DataStorage<number>();
 const objStorage = new DataStorage<object>();
-objStorage.addItem({name: 'MAZ'});
+const mazObject = {name: 'MAZ'}
+objStorage.addItem(mazObject);
 objStorage.addItem({name: 'ZORO'});
-objStorage.removeItem({name: 'MAZ'});
+objStorage.removeItem(mazObject);
 
 console.log('Generic class object:', objStorage.getItems());
+
+// Generic Utility Types/ Union
+interface CourseGoal {
+    title: string;
+    description: string;
+    completeUtil: Date;
+}
+
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+    let courseGoal : Partial<CourseGoal> = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUtil = date;
+
+    return courseGoal as CourseGoal
+}
+
+const names: Readonly<string[]> = ['MAx', 'Anna'];
+names.push('zoro');

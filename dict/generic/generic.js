@@ -27,6 +27,9 @@ class DataStorage {
         this.data.push(item);
     }
     removeItem(item) {
+        if (this.data.indexOf(item) === -1) {
+            return;
+        }
         this.data.splice(this.data.indexOf(item), 1);
     }
     getItems() {
@@ -40,8 +43,16 @@ textStorage.removeItem('MAX');
 console.log('Generic class:', textStorage.getItems());
 const numberStorage = new DataStorage();
 const objStorage = new DataStorage();
-objStorage.addItem({ name: 'MAZ' });
+const mazObject = { name: 'MAZ' };
+objStorage.addItem(mazObject);
 objStorage.addItem({ name: 'ZORO' });
-objStorage.removeItem({ name: 'MAZ' });
+objStorage.removeItem(mazObject);
 console.log('Generic class object:', objStorage.getItems());
+function createCourseGoal(title, description, date) {
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUtil = date;
+    return courseGoal;
+}
 //# sourceMappingURL=generic.js.map
