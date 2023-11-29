@@ -28,7 +28,7 @@ function extractAndConvert<T extends Object, U extends keyof T>(obj: T, key: U) 
     return 'Value: ' + obj[key]
 }
 
-extractAndConvert({name: 'MAZ'}, 'name');
+extractAndConvert({name: 'MAZ'}, 'name'); // keyof return key of propeties,
 
 // Generic Class 
 
@@ -85,4 +85,4 @@ function createCourseGoal(title: string, description: string, date: Date): Cours
 }
 
 const names: Readonly<string[]> = ['MAx', 'Anna'];
-names.push('zoro');
+// names.push('zoro'); error whens usng to push strong in names

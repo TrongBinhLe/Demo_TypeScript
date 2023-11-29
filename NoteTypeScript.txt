@@ -28,3 +28,5 @@
     // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
     // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
  
+ -Using decorator to Log the infomation the develper need to show in console.
+        // "experimentalDecorators": true,      /* Uncomment this line in tsconfig.json */

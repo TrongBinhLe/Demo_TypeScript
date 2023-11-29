@@ -55,4 +55,5 @@ function createCourseGoal(title, description, date) {
     courseGoal.completeUtil = date;
     return courseGoal;
 }
+const names = ['MAx', 'Anna'];
 //# sourceMappingURL=generic.js.map
