@@ -1,3 +1,51 @@
+ class Project {
+  constructor(
+    public id: string,
+    public title: string,
+    public description: string,
+    public people: number,
+  ){}
+ }
+
+ type Listener = (items: Project[]) => void;
+//Project State Management
+class ProjectState {
+  private listeners: any [] = [];
+  private projects: any [] = [];
+  private static instance: ProjectState;
+
+  private constructor() {
+
+  }
+
+  static getInstance() {  
+    if(this.instance) {
+      return this.instance;
+    }
+    this.instance = new ProjectState();
+    return this.instance;
+  }
+
+  addListener(listenerFn: Function) {
+    this.listeners.push(listenerFn);
+  }
+
+  addProject(title: string, description: string, numOfPeople: number) {
+    const newProject = {
+      id: Math.random().toString(),
+      title: title,
+      description: description,
+      people: numOfPeople
+    };
+    this.projects.push(newProject);
+    for(const listenerFn of this.listeners) {
+      listenerFn(this.projects.slice())
+    }
+  }
+}
+
+const projectState = ProjectState.getInstance();
+
 //Validation
 interface Validatable {
   value: string | number;
@@ -147,6 +195,8 @@ class ProjectInput {
       const userInput = this.gatherUserInput();
       if(Array.isArray(userInput)) {
         const [title, desc, people] = userInput;
+        projectState.addProject(title, desc, people);
+        this.clearInput();
         console.log(title, desc, people);
       }
     }
@@ -157,6 +207,12 @@ class ProjectInput {
   
     private attach() {
       this.hostElement.insertAdjacentElement('afterbegin', this.element);
+    }
+
+    private clearInput() {
+      this.titleInputElement.value = '';
+      this.descriptionInputElement.value = '';
+      this.peopleInputElement.value = '';
     }
 }
   
